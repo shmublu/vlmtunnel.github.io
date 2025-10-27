@@ -2,172 +2,86 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="description" content="VLMs have Tunnel Vision evaluates nonlocal visual reasoning in vision-language models across comparative perception, saccadic search, and smooth visual search.">
+  <meta name="keywords" content="vision-language models, nonlocal reasoning, comparative perception, saccadic search, smooth visual search, vlmtunnel">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>VLMs have Tunnel Vision</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <meta property="og:title" content="VLMs have Tunnel Vision">
+  <meta property="og:description" content="Benchmarking VLMs on comparative perception, saccadic search, and smooth visual search.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vlmtunnel.github.io">
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./static/images/favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-
-<section class="hero">
+<section id="hero" class="hero publication-header">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">VLMs have Tunnel Vision</h1>
+          <h2 class="subtitle is-4">Evaluating Nonlocal Visual Reasoning in Vision-Language Models</h2>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            <span class="author-block"><a href="https://shmuelberman.com">Shmuel Berman</a></span>
+            <span class="author-block">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block"><a class="author-link" href="https://www.cs.princeton.edu/~jiadeng/">Jia Deng</a></span>
           </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+          <div class="is-size-6 publication-affiliations">
+            <span class="author-block">Princeton University</span>
           </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
-            </div>
-
+          <div class="publication-venue">NeurIPS 2025</div>
+          <div class="publication-awards">Spotlight Presentation</div>
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2507.13361"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <svg class="action-icon action-icon--paper" viewBox="0 0 384 512" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path>
+                  </svg>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/princeton-vl/vlmtunnel"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <svg class="action-icon action-icon--github" viewBox="0 0 496 512" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                  </svg>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#comparative-perception" class="button is-normal is-rounded is-primary try-button">
+                <span class="icon">
+                  <svg class="action-icon action-icon--game" viewBox="0 0 512 512" aria-label="Game Controller" role="img">
+                    <g fill="currentColor">
+                      <path d="M96 192c-28.7 0-52 23.3-52 52 0 13.3 5 26 14 36l32 34c5.6 6 8.7 13.8 8.7 22 0 38.8 31.5 70.3 70.3 70.3 31.7 0 58.7-21 67-50.3h60c8.3 29.3 35.3 50.3 67 50.3 38.8 0 70.3-31.5 70.3-70.3 0-8.2 3.1-16 8.7-22l32-34c9-10 14-22.7 14-36 0-28.7-23.3-52-52-52H96zM168 224h176c15.5 0 28 12.5 28 28s-12.5 28-28 28H168c-15.5 0-28-12.5-28-28s12.5-28 28-28z"/>
+                      <rect x="136" y="296" width="20" height="56" rx="6"/>
+                      <rect x="112" y="312" width="56" height="20" rx="6"/>
+                      <circle cx="372" cy="308" r="14"/>
+                      <circle cx="404" cy="332" r="14"/>
+                      <circle cx="196" cy="364" r="18"/>
+                      <circle cx="316" cy="364" r="18"/>
+                    </g>
+                  </svg>
+                </span>
+                <span>Try It Yourself</span>
+              </a>
+            </span>
           </div>
         </div>
       </div>
@@ -175,316 +89,311 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<section id="abstract" class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Vision Language Models (VLMs) excel at complex visual tasks such as VQA and chart understanding, yet recent work suggests they struggle with simple perceptual tests. We present an evaluation that tests vision-language models’ capacity for <em>nonlocal visual reasoning</em>—reasoning that requires chaining evidence collected from multiple, possibly distant, regions of an image. We isolate three distinct forms of non-local vision: <em>comparative perception</em>, which demands holding two images in working memory and comparing them; <em>saccadic search</em>, which requires making discrete, evidence-driven jumps to locate successive targets; and <em>smooth visual search</em>, which involves searching smoothly along a continuous contour. Flagship models (e.g. GPT-5, Gemini 2.5 Pro, Claude Sonnet 4), even those that perform well on prior primitive-vision benchmarks, fail these tests and barely exceed random accuracy on two variants of our tasks that are trivial for humans. Our structured evaluation suite allows us to test if VLMs can perform visual algorithms similar to those humans deploy. Our findings show that despite gains in raw visual acuity, current models lack core visual reasoning capabilities.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
-
-<section class="section">
+<section class="section" id="skills-overview">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+    <h2 class="title is-3 has-text-centered">What is Nonlocal Visual Reasoning?</h2>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <div class="box skill-card">
+          <h3 class="title is-4">Comparative Perception</h3>
+          <p>Comparative perception is the ability to compare small differences between two images by moving visual attention back and forth between them.</p>
         </div>
       </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
+      <div class="column is-one-third">
+        <div class="box skill-card">
+          <h3 class="title is-4">Saccadic Search</h3>
+          <p>Sacadic search is the ability to make discrete jumps around an image based on the content of that image. For instance, a traffic sign might redirect a driver's attention towards a road hazard.</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="box skill-card">
+          <h3 class="title is-4">Smooth Visual Search</h3>
+          <p>Smooth visual search is the ability to follow a line or contour around an image. For example, humans use this skill to follow an object in flight or untangle a wire.</p>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
+<section id="comparative-perception" class="section skill-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Comparative Perception</h2>
+    <div class="content">
+      <p>
+        Comparative perception differs from general comparison because it occurs chiefly in the visual domain. The images must be close enough that it requires repeated examination to tell them apart. For instance, an image of a penguin and of Angkor Wat can be easily distinguished. We design "Object Re-Identification" to require this ability.
+    </div>
 
-<section class="section" id="BibTeX">
+    <h3 class="title is-3">Object Re-Identification</h3>
+    <div class="content">
+      <p>
+        Each instance of the task shows an object composed of multiple geometric shapes in Image&nbsp;1. 
+        That same, globally transformed object is also shown in Image&nbsp;2. The task is to determine if any of the component shapes have been transformed seperately from the object as a whole, making it a different object.
+        We avoid imperceptible edits.
+      </p>
+      <div class="variant-box">
+        <h4 class="title is-5">Presentation Variants</h4>
+        <ul>
+          <li><strong>Standard:</strong> all component shapes in the object touch.</li>
+          <li><strong>Unconnected:</strong> parts may float apart, probing the model's conception of an object.</li>
+          <li><strong>Pixel-Perfect:</strong> positive examples reuse Image&nbsp;1 exactly, with no global transform. This can be solved through pixel-matching.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box skill-example">
+      <h3 class="title is-4">Example Task</h3>
+      <p class="example-prompt"><strong>Prompt:</strong> Decide whether the composite object from Image&nbsp;1 is still present somewhere in Image&nbsp;2, even though the scene may include distractors.</p>
+      <div class="columns is-vcentered is-multiline">
+        <div class="column is-half">
+          <div class="image-panel">
+            <div class="image-label">Image 1</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/object-reid/example_33/img1.png" alt="Object Re-ID Image 1">
+              <div class="highlight-ring" style="left:52%;top:58%;width:30%;height:30%;"></div>
+            </figure>
+            <p class="panel-caption">This image defines the object to look for in Image 2.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="image-panel">
+            <div class="image-label">Image 2</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/object-reid/example_33/img2.png" alt="Object Re-ID Image 2">
+              <div class="highlight-ring" style="left:52%;top:47%;width:28%;height:28%;"></div>
+              <div class="highlight-ring secondary" style="left:72%;top:88%;width:18%;height:18%;"></div>
+            </figure>
+            <p class="panel-caption">The object (green circle) has been rotated, but the three component shapes that compose it remain identically positioned relative to each other. The distraction object (in the red circle) can be ignored.</p>
+          </div>
+        </div>
+      </div>
+      <p class="example-answer">Answer: <strong>Yes</strong></p>
+      <p class="is-size-6">A visual skim is not enough to solve this task. Both images must be compared carefully.</p>
+    </div>
+
+    <div class="box skill-interactive" data-demo="object-reid">
+      <h3 class="title is-4">Try it yourself</h3>
+      <div class="columns">
+        <div class="column">
+          <div class="image-panel">
+            <div class="image-label">Image 1</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/object-reid/example_33/img1.png" alt="Interactive Image 1" id="reid-image-1">
+            </figure>
+          </div>
+        </div>
+        <div class="column">
+          <div class="image-panel">
+            <div class="image-label">Image 2</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/object-reid/example_33/img2.png" alt="Interactive Image 2" id="reid-image-2">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <p class="prompt-text" id="reid-prompt">Determine whether the object from Image 1 reappears in Image 2, or if it is corrupted.</p>
+      <div class="buttons is-centered">
+        <button class="button is-medium answer-button" data-choice="yes" id="reid-yes">Yes</button>
+        <button class="button is-medium answer-button" data-choice="no" id="reid-no">No</button>
+        <button class="button is-medium is-light" id="reid-next">New Example</button>
+      </div>
+      <div class="notification is-light" id="reid-feedback">Select an answer to see how you compare.</div>
+      <div class="content is-hidden" id="reid-explanation"></div>
+      <div class="scoreboard" id="reid-scoreboard"></div>
+    </div>
+
+    <figure class="image result-chart">
+      <h4 class="title is-5">Results</h4>
+      <img src="static/images/vlmtunnel/results/object_reid_accuracy.png" alt="Object re-identification accuracy across variants">
+      <figcaption>Object Re-Identification accuracy across variants.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="saccadic-search" class="section skill-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Saccadic Search</h2>
+    <div class="content">
+      <p>
+        Saccadic search captures how humans scan a scene: each observation suggests the next fixation. Updating a world model requires repeatedly revisiting the image in light of what was just found.
+      </p>
+    </div>
+
+    <h3 class="title is-3">Visual Scavenger Hunt</h3>
+    <div class="content">
+      <p>
+        The board contains labeled shapes. Starting from a designated tile, the model must follow the printed labels for several hops. Success hinges on repeatedly searching for the next shape in the chain.
+    </div>
+    <div class="box skill-example">
+      <h3 class="title is-4">Example Task</h3>
+      <p class="example-prompt"><strong>Prompt:</strong> Start on the blue circle indicated and follow the printed labels for three hops. Which color do you land on?</p>
+      <div class="columns is-vcentered">
+        <div class="column is-half">
+          <div class="image-panel">
+            <div class="image-label">Puzzle Board</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/visual-scavenger/example_0/board.png" alt="Visual Scavenger Hunt" class="annotated">
+              <div class="highlight-step step-sequence" style="left:70%;top:90%;animation-delay:0s;">Start</div>
+              <div class="highlight-step step-sequence" style="left:90%;top:10%;animation-delay:2s;">1</div>
+              <div class="highlight-step step-sequence" style="left:10%;top:70%;animation-delay:4s;">2</div>
+              <div class="highlight-step step-sequence" style="left:50%;top:30%;animation-delay:6s;">3</div>
+            </figure>
+          </div>
+        </div>
+        <div class="column">
+          <p>Follow the printed labels three times:</p>
+          <ol class="alpha">
+            <li>Begin on the <strong>blue circle</strong> in the bottom row, fourth from the right.</li>
+            <li>Its label sends you to the <strong>gray square</strong> in the top-left corner.</li>
+            <li>From there move to the <strong>yellow triangle</strong> in the fourth row, leftmost column.</li>
+            <li>The yellow triangle points to the <strong>red square</strong> in the second row, third shape from the left. The answer is <strong>red</strong>.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="example-answer">Answer: <strong>Red</strong></p>
+      <p class="is-size-6">We test this for multiple chain lengths.</p>
+    </div>
+
+    <div class="box skill-interactive" data-demo="visual-scavenger">
+      <h3 class="title is-4">Try it yourself</h3>
+      <div class="columns">
+        <div class="column is-half">
+          <div class="image-panel">
+            <div class="image-label">Puzzle Board</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/visual-scavenger/example_0/board.png" alt="Interactive Visual Scavenger" id="scavenger-image">
+              <div class="scavenger-overlay" id="scavenger-overlay"></div>
+            </figure>
+          </div>
+        </div>
+        <div class="column is-half">
+          <p class="prompt-text" id="scavenger-prompt">Start from the indicated shape and follow three label hops. What color do you land on?</p>
+          <div class="buttons color-grid" id="scavenger-options"></div>
+          <div class="notification is-light" id="scavenger-feedback">Select the color you land on after three hops.</div>
+          <div class="content is-hidden" id="scavenger-explanation"></div>
+          <div class="buttons mt-3">
+            <button class="button is-light" id="scavenger-next">New Puzzle</button>
+          </div>
+          <div class="scoreboard" id="scavenger-scoreboard"></div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="image result-chart">
+      <h4 class="title is-5">Results</h4>
+      <img src="static/images/vlmtunnel/results/scavenger_accuracy.png" alt="Visual scavenger hunt accuracy by chain length">
+      <figcaption>Visual Scavenger Hunt accuracy by chain length.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="smooth-visual-search" class="section skill-section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2">Smooth Visual Search</h2>
+    <div class="content">
+      <p>
+        Smooth visual search is the ability to trace a contour continuously, keeping attention on the target(s). Humans use it when following a moving object or tracking a line across a schematic.
+      </p>
+    </div>
+
+    <h3 class="title is-3">Circuit Connections</h3>
+    <div class="content">
+      <p>
+        Each diagram shows a breadboard, wires, and components. The model must trace a single wire from a numbered port to its destination component. Heuristics based on color or positioning cannot consistently answer this correctly across trials.
+      </p>
+      <div class="variant-box">
+        <h4 class="title is-5">Generator Variants</h4>
+        <ul>
+          <li><strong>Standard:</strong> wires are drawn from a palette of five colors.</li>
+          <li><strong>Unique Colors:</strong> each wire has its own color. This tests if the models are performing a color-lookup heuristic.</li>
+          <li><strong>Single Color:</strong> every wire shares the same color, negating the effect of color-related heuristics.</li>
+        </ul>
+        <p class="is-size-6">Each diagram contains 4–10 components; random guessing yields roughly 14% accuracy.</p>
+      </div>
+    </div>
+    <div class="box skill-example">
+      <h3 class="title is-4">Example Task</h3>
+      <p class="example-prompt"><strong>Prompt:</strong> Trace the wire leaving port&nbsp;5 on the breadboard to see which component it reaches.</p>
+      <div class="columns is-vcentered">
+        <div class="column is-two-thirds">
+          <div class="image-panel">
+            <div class="image-label">Circuit Diagram</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/circuits/example_24/diagram.png" alt="Circuit Connections" class="annotated">
+            </figure>
+          </div>
+        </div>
+        <div class="column">
+          <p class="is-size-6">The only reliable strategy is to trace the wire end to end without relying on color coincidences.</p>
+        </div>
+      </div>
+      <p class="example-answer">Answer: <strong>C8</strong> — the blue wire from port&nbsp;5 bends up and then back down, terminating at component C8.</p>
+    </div>
+
+    <div class="box skill-interactive" data-demo="circuit">
+      <h3 class="title is-4">Try it yourself</h3>
+      <div class="columns is-vcentered">
+        <div class="column is-two-thirds">
+          <div class="image-panel">
+            <div class="image-label">Circuit Diagram</div>
+            <figure class="image">
+              <img src="static/images/vlmtunnel/circuits/example_24/diagram.png" alt="Circuit Interactive" id="circuit-image">
+            </figure>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <p class="prompt-text" id="circuit-prompt">Follow one highlighted port from the breadboard to its destination component.</p>
+          <div class="buttons is-flex is-flex-wrap-wrap" id="circuit-options"></div>
+          <div class="notification is-light" id="circuit-feedback">Pick the component label you believe the wire reaches.</div>
+          <div class="buttons mt-3">
+            <button class="button is-light" id="circuit-next">New Circuit</button>
+          </div>
+          <div class="scoreboard" id="circuit-scoreboard"></div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="image result-chart">
+      <h4 class="title is-5">Results</h4>
+      <img src="static/images/vlmtunnel/results/circuit_accuracy.png" alt="Circuit connections accuracy across variants">
+      <figcaption>Circuit Connections accuracy across variants.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="bibtex" class="section">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{berman2025vlms_tunnel_vision,
+  title        = {VLMs have Tunnel Vision: Evaluating Nonlocal Visual Reasoning in Leading VLMs},
+  author       = {Berman, Shmuel and Deng, Jia},
+  booktitle    = {NeurIPS},
+  year         = {2025},
 }</code></pre>
   </div>
 </section>
 
-
 <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
+  <div class="content has-text-centered">
+    <p>© 2025 Shmuel Berman &amp; Jia Deng · Princeton University · Contact: <a href="mailto:sb6870@princeton.edu">sb6870@princeton.edu</a></p>
+    <p class="is-size-7">Template adapted from <a href="https://nerfies.github.io/">Nerfies</a>.</p>
+    <p class="is-size-7"><a href="https://www.flaticon.com/free-icons/vision" title="vision icons">Vision icons created by Paul J. - Flaticon</a></p>
   </div>
 </footer>
 
+<script src="./static/js/vlmtunnel.js"></script>
 </body>
 </html>
